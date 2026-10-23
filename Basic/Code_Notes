@@ -1,0 +1,630 @@
+
+
+
+-------------------------------------------------
+// bubble Sort
+#include<stdio.h>
+int main()
+{
+    int i,j,t,ele;
+    int a[5]={50,75,35,20,10};
+    ele = sizeof(a)/sizeof(a[0]);
+     
+    for(i-0;i<ele-1;i++)
+    {
+        for(j=0;j<ele-1-i;j++)
+        {
+            if(a[j]>a[j+1])
+            {
+                t=a[j];
+                a[j]=a[j+1];
+                a[j+1]=t;
+            }
+        }
+    }
+   for(i=0;i<ele;i++)
+   printf("%d ",a[i]);
+
+    return 0;
+}
+-----------------------------------------------------------
+// WAP recursive to find the length of the code
+#include<stdio.h>
+int print(const char *s)
+{
+    static int i=0;
+    if(s[i])
+    {
+        i++;
+        print(s);
+    }
+    return i;
+}
+
+int main()
+{
+    char s[10];
+    int i;
+    printf("Enter the string:\n");
+    scanf("%s",s);
+    i= print(s);
+
+    printf("Str len:%d\n",i);
+
+    return 0;
+}
+
+--------------------------------------------------------
+// WAP to print string char by char in recursion.
+#include<stdio.h>
+void print(const char *s)
+{
+    static int i=0;
+    if(s[i])
+    {
+        printf("%c ",s[i]);
+        i++;
+        print(s);
+    }
+}
+
+int main()
+{
+    char s[10];
+    printf("Enter the string:\n");
+    scanf("%s",s);
+
+    print(s);
+
+
+    return 0;
+}
+
+-----------------------------------------------------
+// WAP factorial of a given number
+#include<stdio.h>
+int fact(int num)
+{
+    static int ret =0;
+     if(num == 0)
+        ret =1;
+     else
+       ret = num* fact(num-1);
+
+    return ret;
+}
+
+int main()
+{
+    int num,rel;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+ 
+    rel = fact(num);   
+
+    printf("fact results: %d",rel);
+
+    return 0;
+}
+
+
+-----------------------------------------------
+// WAP to Binary in recursion
+#include<stdio.h>
+
+void print(int n)
+{
+    static int pos = 31;
+    if(pos>=0)
+    {
+        printf("%d ",n>>pos&1);
+        pos--;
+        print(n);
+    }
+   
+}
+int main()
+{
+    int num=15;
+    print(num);
+    printf("\n");
+    return 0;
+}
+
+--------------------------------------------------------
+// WAP to delete given char in a given string.
+#include<stdio.h>
+int main()
+{
+    char s[10],ch;
+    int i,j;
+    printf("Enter the string & char:\n");
+    scanf("%s %c",s,&ch);
+
+    for(i =0;s[i];i++)
+        {
+            if(s[i]==ch)
+             {
+                for(j=i;s[j];j++)
+                   s[j] = s[j+1];
+                //i--;
+             }
+        }
+    printf("%s",s);
+    return 0;
+}
+
+-----------------------------------------------------------
+// WAP to replace a charecter in the given string with different charecter.
+#include<stdio.h>
+int main()
+{
+    char s[10],ch1,ch2;
+    int i;
+    printf("Enter the string and char1 & Char2:\n");
+    scanf("%s %c %c",s,&ch1,&ch2);
+
+    for(i=0;s[i];i++)
+      if(s[i]==ch1)
+         s[i]=ch2;
+
+    printf("%s",s);
+
+
+    return 0;
+}
+
+--------------------------------------------------------
+// WAP to count given character how many times is present.
+#include<stdio.h>
+int main()
+{
+    char s[10],ch;
+    int i,c=0;
+    printf("Enter the string:\n");
+    scanf("%s %c",s,&ch);
+
+    for(i=0;s[i];i++)
+        if(s[i]==ch)
+           c++;
+    
+    printf("The String %s char %c presents %d:\n",s,ch,c);
+
+    return 0;
+}
+
+--------------------------------------------------------
+// Prime number or not.
+#include<stdio.h>
+int main()
+{
+    int n,i,c=0;
+    printf("Enter the number:\n");
+    scanf("%d",&n);
+    
+    for(i=2;i<=n;i++)
+    {
+      if(n%i == 0)
+         c++;
+    }
+    
+    if(c == 1)
+      printf("Prime\n");
+    else
+      printf("Not Prime");
+
+    return 0;
+}
+
+--------------------------------------------------------
+
+// WAP for comparing two string strcmp userdefined.
+#include<stdio.h>
+int main()
+{
+    int i=0;
+    char s[10], s1[10];
+    printf("Enter the strings:\n");
+    scanf("%s %s",s,s1);
+
+    for(i=0;s[i];i++)
+    {
+        if(s[i] != s1[i])
+          break;
+    }
+    
+    if(s[i] == s1[i])
+       printf("Equal...\n");
+    else
+       printf("Not Equal...\n");
+
+    return 0;
+}
+
+-----------------------------------------------------------
+// Copying the one string into another string
+#include<stdio.h>
+int main()
+{
+    char s[10],d[10];
+    int i;
+    printf("Enter the string:\n");
+    scanf("%s",s);
+    
+    for(i=0;s[i];i++)
+       d[i]=s[i];
+
+    d[i]='\0';
+
+    printf("Source %s copied into dest %s\n",s,d);
+
+    return 0;
+}
+---------------------------------------------------------------
+// WAP to convert the given string into upper case
+#include<stdio.h>
+int main()
+{
+    char s[10]="Ganesh";
+    int i;
+    for(i=0;s[i];i++)
+    {
+        // lower
+        // if(s[i]>='a'&&s[i]<='z')
+        //    s[i] = s[i]-32;
+
+        // Upper
+        if(s[i]>='A'&& s[i]<='Z')
+           s[i]=s[i]+32;
+    }
+    printf("%s \n",s);
+
+
+    return 0;
+}
+
+--------------------------------------------------------------
+// WAP to find the string length
+#include<stdio.h>
+int main()
+{
+    char s[10];
+    int i;
+    printf("Enter the string:\n");
+    scanf("%s",s);
+
+    for(i=0;s[i]!='\0';i++);
+    
+    printf("length of the string is %d :\n",i);
+
+    return 0;
+}
+
+-------------------------------------------------------------------
+// WAP to print the string char one by one
+#include<stdio.h>
+int main()
+{
+    char s[10];
+    int i=0;
+    printf("Enter the string:\n");
+    scanf("%s",s);
+    for(i=0;s[i]!='\0';i++)
+    {
+        printf("%c ",s[i]);
+    } 
+    printf("\n");
+    return 0;
+}
+
+----------------------------------------------------------
+// rev a bits in a given number
+#include<stdio.h>
+int main()
+{
+    int num,i,j,m,n,r;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+
+    printf("before swap bianry format:\n");
+    for(i=8;i>=0;i--)
+        printf("%d ", r= num>>i&1);
+
+    printf("\n");
+
+    for(i=0,j=8;i<j;i++,j--)
+    {
+        m = num>>i&1;
+        n = num>>j&1;
+        if(m!=n)
+        {
+            num = num ^ (1<<i);
+            num = num ^ (1<<j);
+        }
+    }
+
+    printf("After swap of two numbers:\n");
+
+    for(i=8;i>=0;i--)
+        printf("%d ",num>>i&1);
+
+    printf("\n");
+    return 0;
+}
+------------------------------------------------------------------
+// Count a number of set bits in the given number
+#include<stdio.h>
+int main()
+{
+    int num,i,c=0,r;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+
+    for(i=8;i>=0;i--)
+      if(num>>i&1)
+         c++;
+
+    printf("Number set bits in the number %d cleared bits %d \n",c, 32-c);
+
+    for(i=8;i>=0;i--)
+        printf("%d ", r= num>>i&1);
+
+        printf("\n");
+    return 0;
+}
+-------------------------------------------------------------------
+// Toggle a bit.
+#include<stdio.h>
+int main()
+{
+    int num,pos,i,r;
+
+    printf("Enter the number and position:\n");
+    scanf("%d %d",&num,&pos);
+
+    printf("Before Toggle bit binary format:\n");
+    for(i=8;i>=0;i--)
+        printf("%d",r=num>>i&1);
+ 
+    printf("\nAfter Toggle %d\n",num= num ^(1<<pos));
+
+    printf("After the toggle binary format:\n");
+    for(i=8;i>=0;i--)
+        printf("%d",r=num>>i&1);
+
+        printf("\n");
+    return 0;
+}
+------------------------------------------------------------
+// Clear a bit
+#include<stdio.h>
+int main()
+{
+    int num,pos,r,i;
+    printf("Enter the number & Position:\n");
+    scanf("%d %d",&num,&pos);
+
+    printf("Before clearing bit binary formart:\n");
+    for(int i=8;i>=0;i--)
+        printf("%d ", r= num>>i&1);
+
+    printf("\n");
+    printf("After clearing a bit %d \n",num = num & ~(1<<pos));
+
+    printf("After clearing a bit :\n");
+    for(i=8;i>=0;i--)
+        printf("%d ",r= num>>i&1);
+
+    printf("\n");
+    return 0;
+}
+
+----------------------------------------------------------------
+// Set a bit & reverse print
+#include<stdio.h>
+int main()
+{
+    int num,pos,i,r;
+    printf("Enter the number & position:\n");
+    scanf("%d %d",&num,&pos);
+
+    printf("Before set a bit binary format:\n");
+    for(i=0;i<=8;i++)
+        printf("%d ", r = num>>i&1);
+
+    printf("\n");
+    printf("After set bit number: %d\n", num = num | (1<<pos));
+
+    printf("After set a bit binary format:\n");
+    for(i=0;i<=8;i++)
+        printf("%d ", r= num>>i&1);
+
+    printf("\n");
+
+    return 0;
+}
+// revere bit binary & set a bit
+
+
+
+-------------------------------------------------------------
+// Set a given bit
+#include<stdio.h>
+int main()
+{
+    int num,pos,r;
+    printf("Enter the number :\n");
+    scanf("%d",&num);
+    printf("Enter the which position bit to set  \n");
+    scanf("%d",&pos);
+
+    printf("before set the bit:\n");
+    for(int i=8;i>=0;i--)
+       printf("%d ",r = num >> i & 1);
+     
+    printf("\n");
+    printf("%d",num = num | (1<<pos));
+
+    printf("\n After set a bit:\n");
+    for(int i=8;i>=0;i--)
+        printf("%d ",r = num >> i & 1);
+
+    printf("\n");
+    return 0;
+
+}
+
+-----------------------------------------------------------------------------
+// Pointer constant & Constant pointer & Constant pointer pointer constant.
+#include<stdio.h>
+int main()
+{
+// Pointer constant
+int a=10,b=20;
+const int *p = &a;
+a=15;
+p=&b;
+// Constant pointer
+int *const q = &a;
+*q=22;
+
+//const pointer const integer
+const int *const r = &a;
+
+printf("%d %d %d \n",*p,*q,*r);
+
+return 0;
+}
+
+----------------------------------------------------
+//LSB or MSB
+#include<stdio.h>
+int main()
+{
+    int i =1;
+    char *ptr = (char *)&i;
+    if(*ptr == 1)
+        printf("Little endian:\n");
+    else
+        printf("Big Endian:\n");
+    return 0;
+}
+
+-------------------------------------------------------
+//WAP to reverse the words in a sentence.
+#include<stdio.h>
+int main()
+{
+    char s[10],t;
+    int i,j;
+    printf("Enter the string: \n");
+    scanf("%s",s);
+    for(i=0;s[i];i++);
+    for(j=0,i=i-1;i>j;i--,j++)
+    {
+        t = s[i];
+        s[i] = s[j];
+        s[j] = t;
+
+    }
+    printf("After reverese %s \n",s);
+    return 0;
+}
+
+---------------------------------------------------
+//Write a program to toggle bit
+#include<stdio.h>
+int main()
+{
+    int num=10,pos=1;
+    int result = num ^ (1<<pos);
+    printf("toggled number %d \n",result);
+
+    return 0;
+}
+
+---------------------------------------------------
+//Logic for sizeof ana array without using sizeof()
+#include<stdio.h>
+int main()
+{
+    int arr[5] ={1,2,3,4,5};
+    int count = 0;
+    while(arr[count]!=0)
+       count++;
+
+    printf("sizeof arr %d\n",count);
+    return 0;
+}
+
+------------------------------------------------
+//WAP to shuffle negative numbers and positive numbers in an array
+#include<stdio.h>
+int main()
+{
+    int arr[]={1,-2,-3,0,-4,6,4,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int rel[n];
+    int i,j;
+    //positive numbers to store.
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]>=0)
+         rel[j++] = arr[i];
+    }
+    //negative numbers to store
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]<0)
+        rel[j++] = arr[i];
+    }
+    //assign the sorted values into arr[n]
+    for(i=0;i<n;i++)
+    {
+        arr[i] = rel[i];
+    }
+
+    //print the sorted array
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
+
+
+----------------------------------------
+//Even & odd number using bitwise opertor
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("Enter the number:\n");
+    scanf("%d",&num);
+    if(num & 1)
+        printf("number is odd %d \n",num);
+    else
+       printf("Numebr is Even %d \n",num);
+    return 0;
+}
+
+
+------------------------------------------
+// Logic to find out power of any number
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    int rel = 1;
+    printf("Enter the a and b:\n");
+    scanf("%d %d",&a,&b);
+    if(b>=0)
+    {
+        int i;
+        for(i=0;i<b;i++)
+         rel = rel * a;
+    }
+    printf("a %d ^ b %d = rel %d \n",a,b,rel);
+    return 0;
+}

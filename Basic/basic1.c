@@ -1,8 +1,13 @@
 #include<stdio.h>
-#include"basic1.h"
+//#include"basic1.h"
+
 int main()
 {
-
+    static int i;
+    i=30;
+    printf("%d\n",i);
+    i=40;
+    printf("%d \n",i);
 
 
     /*
@@ -27,7 +32,6 @@ int main()
     printf("Sum of %d and %d = %d\n",i,j,k);
     
     */
-   
 
     /* ------------------------------------------------
     printf("Date: %s\n", __DATE__);
